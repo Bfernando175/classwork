@@ -1,0 +1,84 @@
+# Exercise
+#---------
+# Create a while loop that will print:
+#  1. from 494 to 623 by 3.
+#  2. from 132 to 272 by 14.
+#  3. from -129 to 429 by 18.
+#  4. from -19 to 231 by 10.
+#  5. from -86 to 145 by 7.
+#  6. from -289 to 255 by 16.
+#  7. from 62 to 164 by 3.
+#  8. from -482 to -47 by 15.
+#  9. from 290 to 938 by 18.
+# 10. from 216 to 216 by 0.
+
+i = 494 
+
+while i < 623:
+  print(i)
+  i += 3
+print(i)
+
+i = 132
+
+while i < 272:
+  print(i)
+  i += 14
+print(i)
+
+i = -129
+
+while i < 429:
+  print(i)
+  i += 18
+print(i)
+
+i = -19
+
+while i < 231:
+  print(i)
+  i += 10
+print(i)
+
+i = -86
+
+while i < 145:
+  print(i)
+  i += 7
+print(i)
+
+i = -289
+
+while i < 255:
+  print(i)
+  i += 16
+print(i)
+
+i = 62
+
+while i < 164:
+  print(i)
+  i += 3
+
+i = -482
+
+while i < -47:
+  print(i)
+  i += 15
+print(i)
+
+i = 290
+
+while i < 938:
+  print(i)
+  i += 18
+print(i)
+
+i = 216
+
+while i == 216:
+  print(i)
+  i += 1
+print(i)
+
+
