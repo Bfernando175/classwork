@@ -122,4 +122,50 @@ print("")
 print("Loop")
 print("")
 print("Exercise 61: Average ")
+count = 0
+total = 0
+value = float(input("Enter a number: "))
+while value != 0:
+  total = total + value
+  count = count + 1
+  value = float(input("Enter another number: "))
+
+if count == 0:
+  print("No values were enetered.")
+else:
+  average = total / count
+print("The average of those numbers is", average)
+
+
+print("")
+print("Exercise 62: Discount Table")
+print("Original  /  Discount  /  New Price")
+print("_________________________________________________")
+
+
+og_price = 4.95
+
+
+while og_price < 25:
+  d = og_price * 0.60
+  new_price = og_price - d
+  print(f"Original: ${og_price}  /  Discount: 60%  / New Price: ${new_price}") 
+  og_price += 5
+  
+
+print("")
+print("Exercise 63: ")
+print("Celcius to Fahrenheit")
+print("______________________________________________________")
+c = 0
+while c < 100:
+  f = 9/5*c + 32
+  c += 10
+  print(f"Celcius: {c}C  /  Fahrenheit: {f}F")
+
+
+
+
+
+
 
