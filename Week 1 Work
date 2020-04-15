@@ -1,0 +1,125 @@
+print("Intro")
+
+print("Exercise 1: Mailing Address")
+
+print("Brian Fernando")
+print("123 unknown street,")
+print("Richmondhill, ON")
+print("L5K 4X4")
+print("")
+print("4/14/2020")
+
+print("")
+print("Exercise 2: Hello")
+
+name = input("What is your name? ")
+print(f"Hello {name}")
+
+print("")
+print("Exercise 3: Area of a Room")
+
+width = float(input("What is the width of the room?  "))
+length = float(input("What is the length of the room? "))
+
+area = length * width
+
+print(f"The area of the room is {area}m2")
+
+print("")
+print("Exercise 4: Area of a Field") 
+
+length = int(input("What is the length? "))
+width = int(input("What is the width? "))
+area = float((length * width)/ 43560)
+area = round(area, 2)
+
+print(f"The area of the field is {area}acre")
+
+print("")
+print("Exercise 5: Bottle Deposits")
+
+less_than = int(input("How many containers do you have that is holding one liter or below? "))
+
+more_than = int(input("How many containers do you have that is holding more than one liter "))
+
+total = float(less_than * 0.10) + (more_than * 0.25)
+total = round(total, 3)
+
+print(f"For all the containers, you will be refunded ${total} ")
+
+print("")
+print("If Statement")
+print("")
+print("Exercise 34: Even or Odd")
+
+num = int(input())
+num = num%2
+if num == 0:
+  print("Even")
+else:
+  print("Odd")
+
+print("")
+print("Exercise 35: Dog Years")
+
+year = int(input("# of human years: "))
+if year <= 2:
+  year = year * 10.5
+  print(f"would equal to {year} years in dog age")
+elif year > 2:
+  year = ((year - 2) * 4) + 21
+  print(f"would equal to {year} years in dog age")
+else:
+  print("Error")
+
+print("")
+print("Exercise 36: Vowel or Consonant")
+
+letter = input("Choose a letter: ")
+if letter == "a" or letter == "e" or letter == "i" or letter == "o" or letter == "u":
+  print("It is a Vowel")
+elif letter == "y":
+  print("Sometimes a vowel and sometimes a consonant")
+else:
+  print("It is a Consonant")
+
+print("")
+print("Exercise 37: Name that Shape")
+
+shape = int(input("Number of sides of the shape: "))
+
+if shape == 3:
+  print("It is a Triangle")
+elif shape == 4:
+  print("It is a Square")
+elif shape == 5:
+  print("It is a Pentagon")
+elif shape == 6:
+  print("It is a Hexagon")
+elif shape == 7:
+  print("It is a Heptagon")
+elif shape == 8:
+  print("It is a Octagon")
+elif shape == 9:
+  print("It is a Nonagon")
+elif shape == 10:
+  print("It is a Decagon")
+else:
+  print("Error, out of range")
+
+print("")
+print("Exercise 38: Month Name to Numbers of Days")
+
+month = input("What month is it? ")
+if month == "January" or month == "january" or month == "March" or month == "march" or month == "May" or month == "may" or month == "July" or month == "july" or month == "August" or month == "august" or month == "October" or month == "october" or month == "December" or month == "december":
+  print(f"There are 31 days for the month of {month}")
+elif month == "February" or month == "february":
+  print(f"There are 28 or 29 days for the month of {month}")
+else:
+  print(f"There are 30 days for the month of {month}")
+
+print("")
+print("Loop")
+print("")
+print("Exercise 61: Average ")
+
