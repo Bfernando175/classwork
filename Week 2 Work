@@ -1,0 +1,23 @@
+
+
+
+
+
+
+
+
+
+
+
+#Logic -1
+#Caught_speeding
+
+def caught_speeding(speed, is_birthday):
+  if is_birthday is True:
+    speed -= 5
+  if speed > 80:
+    return 2
+  elif speed > 60:
+    return 1
+  else:
+    return 0
