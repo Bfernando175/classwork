@@ -1,8 +1,67 @@
+#String -1
+#Hello_name
+def hello_name(name):
+  return "Hello " + (name) + "!"
+
+#String - 2
+#Count_code
+def count_code(str):
+  
+  ctr = 0
+  for i in range(0,len(str) - 3,1):
+    if str[i:i+2] == "co" and str[i+3] == "e":
+      ctr += 1
+  
+  return ctr
+  
+  #String -2
+  #Count_hi
+  
+  def count_hi(str):
+  count = 0
+  for i in range(0, len(str) - 1, 1):
+    if str[i:i+2] == "hi":
+      count  = count + 1
+  return count
+
+
+#List -2
+#Count_even
+
+
+def count_evens(nums):
+  count = 0
+  for i in range(0, len(nums),1):
+    if nums[i] % 2 == 0:
+      count += 1
+  return count
+
+
+#List -1
+#First_last6
+
+def first_last6(nums):
+
+  if nums[0] == 6 or nums[len(nums) - 1] == 6:
+      return True
+  else:
+      return False
+
+
+
+#List -1
+#Reverse3
+
+def reverse3(nums):
+  nums = nums[::-1]
+  return nums
 
 
 
 
-#Logic -1
+
+
+#Logic -2
 #Close_far
 
 def close_far(a, b, c):
@@ -20,9 +79,6 @@ def close_far(a, b, c):
 
 
 
-
-
-
 #Logic -1
 #Caught_speeding
 
@@ -35,3 +91,45 @@ def caught_speeding(speed, is_birthday):
     return 1
   else:
     return 0
+
+
+#Logic -1
+#love6
+
+def love6(a, b):
+  
+  if a == 6 or b == 6:
+    return True
+  
+  if a+b == 6:
+    return True
+  
+  if abs(a-b) == 6:
+    return True
+  else:
+    return False
+
+
+#Warmup -2
+#String_times
+def string_times(str, n):
+  return str*n
+  
+  
+#Warmup -2
+#Front_times
+
+def front_times(str, n):
+  return str[:3] * n
+
+
+#Warmup -2 
+#String_bits
+
+def string_bits(str):
+  results = ''
+  for x in xrange(0, len(str), 2):
+    results += str[x]
+  return results
+
+
