@@ -1,0 +1,135 @@
+
+"""
+Number Guessing Game 
+"""
+
+
+import random
+
+num = random.randrange(1,101)
+print("The computer thought of a number")
+attempts = 1
+
+while True:
+
+  print(f"Attempt: {attempts}")
+  guess = int(input("Guess the number: "))
+  
+  if num == guess:
+    print(f"You have guess the correct number.")
+    print()
+    print(f"It took you {attempts} attempts to guess the correct answer.")
+    break
+  else:
+    print("Wrong number, Try again.")
+  
+  if guess > num:
+    print("The real number is lower.")
+  else:
+    print("The real number is higher")
+
+  if attempts == 10:
+    print()
+    print("Ran out of attempts, You Lose!")
+    break
+  print()
+  
+  
+  attempts += 1
+
+
+
+"""
+Snakes and Ladders
+"""
+
+
+
+import random
+
+
+player1 = 0
+
+while True:
+  
+  input("Press ENTER to roll dice.")
+  roll = random.randrange(1, 7)
+    
+  print(f"You rolled a {roll}")
+
+  player1 += roll
+    
+  """
+  Ladders
+  """
+
+  if player1 == 4:
+    print("You landed on a ladder. Advance to space 14")
+    player1 = 14
+  if player1 == 9:
+    print("You landed on a ladder. Advance to space 31")
+    player1 = 31
+  if player1 == 20:
+    print("You landed on a ladder. Advance to space 38")
+    player1 = 38
+  if player1 == 28:
+    print("You landed on a ladder. Advance to space 84")
+    player1 = 84
+  if player1 == 40:
+    print("You landed on a ladder. Advance to space 59")
+    player1 = 59
+  if player1 == 51:
+    print("You landed on a ladder. Advance to space 67")
+    player1 = 67
+  if player1 == 63:
+    print("You landed on a ladder. Advance to space 81")
+    player1 = 81
+  if player1 == 71:
+    print("You landed on a ladder. Advance to space 91")
+    player1 = 91
+
+  """
+  Snakes
+  """
+
+  if player1 == 17:
+    print("You landed on a snake. Go back to position 7.")
+    player1 = 7
+  if player1 == 54:
+    print("You landed on a snake. Go back to position 34.")
+    player1 = 34
+  if player1 == 62:
+    print("You landed on a snake. Go back to position 19.")
+    player1 = 19
+  if player1 == 64:
+    print("You landed on a snake. Go back to position 60.")
+    player1 = 60
+  if player1 == 87:
+    print("You landed on a snake. Go back to position 24.")
+    player1 = 24
+  if player1 == 93:
+    print("You landed on a snake. Go back to position 73.")
+    player1 = 73
+  if player1 == 95:
+    print("You landed on a snake. Go back to position 75.")
+    player1 = 75
+  if player1 == 99:
+    print("You landed on a snake. Go back to position 78.")
+    player1 = 78
+    
+
+
+
+    
+  if player1 == 100:
+    print("YOU WIN!")
+    break
+    
+  elif player1 > 100:
+    player1 -= roll
+    print("You overshot 100. Try again.")
+    
+  else:
+    print(f"You are now at {player1}")
+  
+  print()
