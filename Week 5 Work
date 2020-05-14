@@ -1,0 +1,139 @@
+"""
+Welcome to my Adventure Game
+"""
+
+
+cabinet_key = False
+lights_on = False
+door_key = False
+location = "bedroom"
+door_code = 4953
+
+
+print("You wake up.")
+print("You are in a small dark room. You don't know why you are here.")
+while location != "escaped":
+  if location == "bedroom":
+    # display text
+    print("The left wall has a light switch on it.")
+    print("There's a locked cabinet on the right.")
+    print("There's a door infront of you.")
+    print("There's also a large pile of junk laying on the floor.")
+
+    # display menu
+    print()
+    print("Choose one of the following actions:")
+    print("[1] Open the door")
+    print("[2] Turn on the light")
+    print("[3] Check out the cabinet")
+    print("[4] Look through the pile of junk")
+
+    # get choice
+    choice = int(input("Choice: "))
+         
+    # if statements for choice
+    if choice == 1:
+      location = "bedroom-door"
+    elif choice == 2:
+      if lights_on == False: 
+        print("You turn on the light.")
+        lights_on = True
+      else:
+        print("You already turned on the lights")
+    elif choice == 3:
+      location = "bedroom-cabinet"
+    elif choice == 4:
+      location = "junk-pile"
+  
+  elif location == "bedroom-door":
+    if lights_on == True:
+      print("The door is a codelock")
+      print("You try to unlock the door")
+      if door_key == True:
+        print(f"The code shown on the paper is {door_code}")
+      player_code = int(input("Insert Code: "))
+      print()
+      if player_code == door_code:
+        print("You have unlocked the door.")
+        break
+      else:
+        print("Incorrect Password.")
+        print("Try to look around to see if you could find the code")
+        location = "bedroom"
+        
+    else:
+      print("Its too dark in here, try to light up the place a bit.")
+      location = "bedroom"
+
+
+    
+  elif location == "bedroom-cabinet":
+    if lights_on == True: 
+      if cabinet_key == True:
+        if door_key == True:
+            print("The cupboards are all empty, try to unlock the door.")
+            choice = input("Press ENTER to go back")
+            location = "bedroom"
+            
+      
+        while door_key == False:
+          
+          print("All the cupboards are empty except one")
+          print("There is a ripped sheet of paper inside")
+          print()
+          print("Choose one of the following actions:")
+          print("[1] Grab the paper")
+          print("[2] Go back")
+          choice = int(input("Choice: "))
+
+          if choice == 1:
+            print("You grabbed the paper")
+            print("On it is a 4 digit code")
+            print(f"The code is {door_code}")
+            location = "bedroom"
+            door_key = True
+          if choice == 2:
+            location = "bedroom"
+            break
+      else:
+        print("The cabinet is locked, look around the floor to see if its there.")
+        location = "bedroom"
+    
+    
+    else:
+      print("Its too dark in here, try to light up the place a bit.")
+      location = "bedroom"
+
+
+  elif location == "junk-pile":
+    if lights_on == True:
+
+      print("You look through the pile and find a old broken box")
+      print("You see a rusty key inside it.")
+      print()
+      print("Choose one of the following actions:")
+      print("[1] Grab the key")
+      print("[2] Go back")
+      choice = int(input("Choice: "))
+      if choice == 1:
+        print("You grab the rusty key, try unlock something.")
+        cabinet_key = True
+        location = "bedroom"
+      if choice == 2:
+        location = "bedroom"
+    else:
+      print("Its too dark in here, try to light up the place a bit.")
+      location = "bedroom"
+
+
+
+ 
+    
+    
+  input("Press ENTER to continue")
+  print()
+  print()
+
+
+print("CONGRATULATIONS!")
+print("YOU HAVE ESCAPED THE ROOM!")
