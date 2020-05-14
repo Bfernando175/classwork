@@ -1,3 +1,5 @@
+import random
+
 """
 Welcome to my Adventure Game
 """
@@ -7,7 +9,8 @@ cabinet_key = False
 lights_on = False
 door_key = False
 location = "bedroom"
-door_code = 4953
+door_code = random.randrange(1000, 10000)
+
 
 
 print("You wake up.")
@@ -47,7 +50,7 @@ while location != "escaped":
   
   elif location == "bedroom-door":
     if lights_on == True:
-      print("The door is a codelock")
+      print("The door is a 4-digit codelock")
       print("You try to unlock the door")
       if door_key == True:
         print(f"The code shown on the paper is {door_code}")
@@ -55,7 +58,7 @@ while location != "escaped":
       print()
       if player_code == door_code:
         print("You have unlocked the door.")
-        break
+        location = "escaped"
       else:
         print("Incorrect Password.")
         print("Try to look around to see if you could find the code")
@@ -88,7 +91,7 @@ while location != "escaped":
 
           if choice == 1:
             print("You grabbed the paper")
-            print("On it is a 4 digit code")
+            print("On it is a 4-digit code")
             print(f"The code is {door_code}")
             location = "bedroom"
             door_key = True
