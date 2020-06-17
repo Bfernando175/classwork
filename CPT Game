@@ -1,0 +1,210 @@
+import random
+import os
+
+
+turn = 1
+points = 0
+location = "menu"
+success = 0
+equals = 0
+
+
+while True:
+  
+  if location == "menu":
+    play_again = False
+    os.system('clear')
+    print(f"Turn: {turn}")
+    print(f"You have {points} points currently.")
+    print()
+    
+    print("Choose one of the following actions:")
+    print("[1] Regular Roll")
+    print("[2] Double Roll")
+    print("[3] Cash Out")
+
+    try:
+      choice = int(input("Choice: "))
+    except ValueError:
+      print("Not a option choose again.")
+      print()
+      input("Press Enter to continue")
+      continue
+      
+    
+    if choice == 1:
+      location = "regular-roll"
+      
+    elif choice == 2:
+      location = "double-roll"
+    elif choice == 3:
+      location = "cash-out"
+    
+
+    else:
+      print("Not a option choose again.")
+      print()
+      input("Press Enter to continue")
+      
+    
+    print()
+    
+  elif location == "regular-roll":
+    print()
+    print(f"Turn: {turn}")
+    input("Press Enter to roll dice")
+    roll = random.randrange(1, 7)
+    print()
+    print(f"You rolled a {roll} ")
+    
+    if roll <= 3:
+      results = roll * 10
+      points += results
+      print(f"Results = {results} points")
+    
+
+    elif roll >= 4:
+      results = (roll - 3) * 10
+      points -= results
+      print(f"Results = -{results} points")
+
+  
+
+  
+    print(f"You have {points} points")
+    print()
+    
+    turn += 1
+    
+    print()
+    print("Choose one of the following actions:")
+    print("[1] Roll Again")
+    print("[2] Go Back to Main Menu")
+    
+    while True:
+      try:
+        choice = int(input("Choice: "))
+      except ValueError:
+        print("Not a option choose again.")
+        print()
+        continue
+        
+    
+      if choice == 1:
+        break
+        continue
+        print()
+      if choice == 2:
+        location = "menu"
+        input("Press Enter to continue")
+        break
+      else:
+        print("Not a option choose again.")
+        print()
+        continue
+       
+  elif location == "double-roll":
+    print()
+    print(f"Turn: {turn}")
+    input("Press Enter to roll twice")
+    roll = [random.randrange(1, 7), random.randrange(1, 7)]
+    print()
+    print(f"You rolled {roll} in total that is {sum(roll)}")
+    print()
+
+    if roll[1] > roll[0]:
+      points += 50
+      success += 1
+      print("You're second rolled is higher than your first")
+      print("You get gained 50 points!")
+    elif roll[0] == roll[1]:
+      points += 100
+      success += 1
+      equals += 1
+      print("You rolled equal numbers") 
+      print("You get gained 100 points!")
+    else:
+      print("You're first roll is higher than your second roll")
+      print("You lose 65 points")
+      points -= 65
+    print(f"You have {points} points currently.")
+    turn += 1
+
+    print()
+    print("Choose one of the following actions:")
+    print("[1] Roll Again")
+    print("[2] Go Back to Main Menu")
+    
+    while True:
+      try:
+        choice = int(input("Choice: "))
+      except ValueError:
+        print("Not a option choose again.")
+        print()
+        continue
+        
+    
+      if choice == 1:
+        break
+        continue
+        print()
+      elif choice == 2:
+        location = "menu"
+        input("Press Enter to continue")
+        break
+      else:
+        print("Not a option choose again.")
+        print()
+        continue
+
+  elif location == "cash-out":
+    os.system('clear')
+    
+    print("Ending Stats:")
+    print()
+    print(f"Final Score: {points} ")
+    print(f"Total Turns: {turn - 1}")
+    if turn > 1:
+      points_turn = points / (turn - 1)
+      print(f"{round(points_turn, 2)} points per turn")
+    else:
+      print("You have to roll atleast once to cash out. ")
+      print()
+      input("Press Enter to continue")
+      location = "menu"
+      continue
+    print(f"Double roll success: {success} ({equals} equal)")
+
+
+    print()
+    print("Choose one of the following actions:")
+    print("[1] End Game")
+    print("[2] Play Again")
+    
+    try:
+      choice = int(input("Choice: "))
+    except ValueError:
+      print("Not a option choose again.")
+      print()
+      input("Press Enter to continue")
+      continue
+
+    if choice == 1:
+      print()
+      print("GAME OVER")
+      break
+      
+    elif choice == 2:
+      points = 0
+      turn = 1
+      success = 0
+      equals = 0
+      location = "menu"
+      continue
+        
+    else:
+      print("Not a option choose again.")
+      print()
+      input("Press Enter to continue")
+      continue
+    
