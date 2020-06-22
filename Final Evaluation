@@ -5,7 +5,12 @@ def first_two(str):
   else:
     return str[0:2]
 
-
+#Combo String
+def combo_string(a, b):
+  if len(a) > len(b):
+    return b + a + b
+  else:
+    return a + b + a
 
 
 
