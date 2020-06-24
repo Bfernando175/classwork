@@ -11,7 +11,7 @@ def first_two(str):
 def count_code(str):
   
   ctr = 0
-  for i in range(0,len(str) - 3,1):
+  for i in range(len(str) - 3):
     if str[i:i+2] == "co" and str[i+3] == "e":
       ctr += 1
   
@@ -32,7 +32,7 @@ def lone_sum(a, b, c):
  def count_hi(str):
  
   count = 0
-  for i in range(0, len(str)- 1, 1):
+  for i in range(len(str)- 1):
     if str[i:i+2] == "hi":
       count += 1
       
